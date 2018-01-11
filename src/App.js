@@ -4,6 +4,7 @@ import $ from 'jquery';
 import AddProjects from './components/AddProjects';
 import Projects from './components/projects';
 import AddTask from './components/AddTask';
+import ToDos from './components/ToDos';
 
 import './App.css';
 
@@ -86,6 +87,7 @@ class App extends Component {
                 <AddTask />
                 <AddProjects addProject={this.handleAddProject.bind(this)}/>
                 <Projects projects={this.state.projects} onDelete={this.handleDeleteProject.bind(this)}/>
+                <ToDos todos={this.state.todos}/>
             </div>
         );
     }
