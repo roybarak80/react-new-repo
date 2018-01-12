@@ -2,27 +2,26 @@
  * Created by Roy Barak on 10-Jan-18.
  */
 import React, { Component } from 'react';
-import ProjectItem from './ProjectItem';
+
 
 class Projects extends Component {
-    deleteProject(id){
-        this.props.onDelete(id);
-    }
-    render() {
-        let projectItems;
-        if(this.props.projects) {
-            projectItems = this.props.projects.map(project => {
-                //console.log(project);
-                return (
 
-                    <ProjectItem onDelete={this.deleteProject.bind(this)}key={project.title} project={project} />
-                );
-            });
-        }
+
+
+    render() {
+
+        var _data = this.props.projects;
+        console.log(_data);
+
         return (
             <div className="Projects">
-                <h3>Latest Projects</h3>
-                {projectItems}
+                {_data.map(function(object, i){
+                    return <div className={"row"} key={i}>
+                        {[ object.name ,
+                            <b className="fosfo" key={i}> {object.city} </b> ,
+                        ]}
+                    </div>;
+                })}
             </div>
         );
     }
