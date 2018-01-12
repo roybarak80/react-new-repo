@@ -5,7 +5,13 @@ import React, { Component } from 'react';
 import ToDoItem from './ToDoItem';
 
 class ToDos extends Component {
+    handleClickSelect = () => {
+        this.setState({
+            title:this.refs.title.value
+        })
 
+        //console.log(this.refs.title.value);
+    }
     render() {
         let todoItems;
         if(this.props.todos) {
@@ -17,10 +23,19 @@ class ToDos extends Component {
                 );
             });
         }
+
+       let message ='';
+        if(this.state === null){
+            message ='foo ';
+        } else {
+            message ='foo ' + this.refs.title.value;
+            ///console.log(Object.values(this.state));
+        }
         return (
             <div className="ToDos">
                 <h3>Latest Todos</h3>
-                {todoItems}
+                <select ref="title" onChange={this.handleClickSelect}>{todoItems}</select>
+                <p>{message}</p>
             </div>
         );
     }

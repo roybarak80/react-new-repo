@@ -12,10 +12,12 @@ class AddProjects extends Component {
     static defaultProps ={
         categories: ['Web Design', 'Web Development', 'Mobile Development']
     }
+
     handleSubmit(e){
         if(this.refs.title.value === ''){
             console.log('empty');
         } else {
+
             this.setState({newProject:{
                 id:uuid.v4(),
                 title: this.refs.title.value,
@@ -54,6 +56,7 @@ class AddProjects extends Component {
                     <input type="submit" value="submit"/>
 
                 </form>
+
             </div>
         );
     }

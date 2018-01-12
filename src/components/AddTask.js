@@ -4,19 +4,18 @@
 import React, {Component} from 'react';
 
 class AddTask extends Component {
-    constructor(){
-        super();
-        //this.state = {
-        //    newProject:{}
-        //}
-    }
+
     static defaultProps ={
         tasks: ['Shopping', 'Studying', 'Cleaning']
     }
 
     // Warning: this is *experimental* syntax.
     handleClick = () => {
-        console.log('this is:', this.refs);
+      this.setState({
+          value:this.refs.category.value
+      })
+
+       // console.log('this is:', this.refs.category.value);
     }
     render() {
 
@@ -24,6 +23,14 @@ class AddTask extends Component {
         let tasksOptions = this.props.tasks.map(task => {
             return <option key={task} value={task} >{task}</option>
         });
+        let message ='';
+        if(this.state === null){
+            message ='foo ' + 'Studying';
+        } else {
+            message ='foo ' + Object.values(this.state);
+            console.log(Object.values(this.state));
+        }
+
 
 
         return (
@@ -34,7 +41,7 @@ class AddTask extends Component {
                 <select ref="category" onChange={this.handleClick}>
                     {tasksOptions}
                 </select>
-
+                <p>{message}</p>
                 <br/>
 
             </div>
