@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    margin: 0!important;
+    padding: 0!important;
+}
+
+header{
+    background-color: #adedc8;
+    text-align: center;
+}
+
+.logo{
+    color:#fff;
+    font-size: 40px;
+    font-family: fantasy;
+
+
+}
+
+header input {
+font-size: 20px;
+    margin: 20px 0px;
+}
+
+.news_item{
+    padding: 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid grey;
+}
